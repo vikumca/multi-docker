@@ -20,7 +20,7 @@ after_success:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
         - docker push vikumca/multi-client
-        - docker push vikumca/multi/nginx
+        - docker push vikumca/multi-nginx
         - docker push vikumca/multi-server
         - docker push vikumca/multi-worker  
 
