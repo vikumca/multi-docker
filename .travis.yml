@@ -24,3 +24,17 @@ after_success:
         - docker push vikumca/multi-server
         - docker push vikumca/multi-worker  
 
+deploy:
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
+        edge: true
+        provider: elasticbeanstalk
+        region: ap-south-1
+        app: multi-docker
+        env: MultiDocker-env
+        bucket_name: elasticbeanstalk-ap-south-1-278126853435
+        bucket_path: docker-multi
+        skip_cleanup: true
+        on:
+                branch: master
+
